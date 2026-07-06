@@ -1,0 +1,13 @@
+Привет! Мы продолжаем разработку бэкенда для финансового трекера на Django REST Framework.
+
+Что уже сделано:
+1. Созданы модели: Wallet (Кошелек), Category (Категория доходов/расходов) и Transaction (Транзакция).
+2. Написаны и утверждены все три сериализатора в serializers.py (включая TransactionSerializer с полями ['id', 'amount', 'category', 'created_at', 'wallet'] и read_only_fields = ['user']).
+3. В views.py уже написаны два представления (Generics):
+   - WalletListCreateView: отдает кошельки текущего юзера (через self.request.user) и привязывает его при создании.
+   - CategoryListCreateView: отдает объединенный QuerySet из личных категорий юзера и общих (где user__isnull=True), а также привязывает юзера в perform_create.
+
+Наш следующий шаг:
+Нам нужно написать TransactionListCreateView для транзакций. Базовую логику get_queryset и perform_create (привязку к юзеру) мы обсудили. Теперь нужно реализовать бизнес-логику в perform_create: при создании транзакции должен автоматически меняться баланс кошелька (wallet.balance) в зависимости от типа категории (доход или расход).
+
+Давай продолжим с написания TransactionListCreateView и изменения баланса!
