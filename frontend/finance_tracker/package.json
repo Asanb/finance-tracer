@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "stop": "taskkill /f /im node.exe"
+    "stop": "taskkill /f /im node.exe",
+    "init-tailwind": "tailwindcss init -p"
   },
   "dependencies": {
     "react": "^19.2.7",
@@ -20,10 +21,13 @@
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
+    "autoprefixer": "^10.5.2",
     "eslint": "^10.6.0",
     "eslint-plugin-react-hooks": "^7.1.1",
     "eslint-plugin-react-refresh": "^0.5.3",
     "globals": "^17.7.0",
+    "postcss": "^8.5.16",
+    "tailwindcss": "^4.3.2",
     "vite": "^8.1.1"
   }
 }
